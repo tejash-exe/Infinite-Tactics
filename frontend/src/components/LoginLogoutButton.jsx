@@ -34,6 +34,7 @@ const LoginLogoutButton = () => {
                     setisAuth(true);
                 }
                 else {
+                    console.log(result);
                     throw new Error(result.message);
                 }
             }
