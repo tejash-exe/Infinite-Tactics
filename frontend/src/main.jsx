@@ -4,7 +4,7 @@ import { Navigate, RouterProvider, createBrowserRouter } from 'react-router-dom'
 import { AppProvider } from './context/context.jsx';
 import App from './App.jsx';
 import Home from './pages/home/Home.jsx';
-import OfflineGame from './pages/offlineGame/offlineGame.jsx';
+import OfflineGame from './pages/offlineGame/OfflineGame.jsx';
 import OnlineGame from './pages/onlineGame/OnlineGame.jsx';
 import Leaderboard from './pages/leaderboard/Leaderboard.jsx';
 import PageNotFound from './pages/pagenotfound/PageNotFound.jsx';
