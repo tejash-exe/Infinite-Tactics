@@ -49,6 +49,7 @@ const LoginLogoutButton = () => {
         onSuccess: responseGoogle,
         onError: responseGoogle,
         flow: 'auth-code',
+        ux_mode: "popup",
     });
 
     const handleLogout = async (e) => {
