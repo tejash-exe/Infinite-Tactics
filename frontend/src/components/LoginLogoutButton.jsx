@@ -9,7 +9,6 @@ const LoginLogoutButton = () => {
 
     const responseGoogle = async (authResult) => {
         try {
-            // console.log(authResult);
             setloading(true);
             if (authResult.code) {
                 const response = await fetch(`${backend_url}/api/users/login?code=${authResult.code}`, {
@@ -20,7 +19,6 @@ const LoginLogoutButton = () => {
                     credentials: 'include',
                 });
                 const result = await response.json();
-                // console.log(result);
 
                 if (result.status == 200) {
                     localStorage.setItem("name", result.data.user.name);
@@ -48,7 +46,7 @@ const LoginLogoutButton = () => {
 
     const googleLogin = useGoogleLogin({
         onSuccess: responseGoogle,
-        onerror: responseGoogle,
+        onError: responseGoogle,
         flow: 'auth-code',
     });
 
@@ -67,7 +65,7 @@ const LoginLogoutButton = () => {
         } catch (error) {
             console.log(error);
         } finally {
-            localStorage.setItem("isAuth", JSON.parse(false));
+            localStorage.setItem("isAuth", "false");
             setisAuth(false);
             setloading(false);
         }
