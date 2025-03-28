@@ -4,7 +4,7 @@ export const AppContext = createContext(" ");
 
 export const AppProvider = ({ children }) => { 
 
-  const backend_url = 'http://localhost:5000';
+  const backend_url = 'https://infinite-tactics.onrender.com';
 
   const [isAuth, setisAuth] = useState(JSON.parse(localStorage.getItem('isAuth')) || false);
   const [name, setname] = useState(localStorage.getItem('name') || "");
