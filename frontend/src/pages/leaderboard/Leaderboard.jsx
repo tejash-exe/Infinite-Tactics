@@ -61,7 +61,7 @@ const Leaderboard = () => {
                     <thead className="bg-purple-600 text-white sticky top-0 z-10">
                         <tr>
                             <th className="py-3 px-3 w-[20%] text-left">Rank</th>
-                            <th className="py-3 px-3 w-[20%] text-center">User</th>
+                            <th className="py-3 px-3 w-[20%] text-left">User</th>
                             <th className="py-3 px-3 w-[40%] text-left">Name</th>
                             <th className="py-3 px-3 w-[20%] text-center">Score</th>
                         </tr>
@@ -72,14 +72,14 @@ const Leaderboard = () => {
                         <tbody>
                             {ratings.map((rating, index) => (
                                 <tr key={rating.email} className={index % 2 === 0 ? "bg-purple-50" : "bg-white"}>
-                                    <td className="py-3 px-3 text-sm text-left">{index + 1}</td>
-                                    <td className="py-3 px-3 text-center">
+                                    <td className="py-3 px-3 text-sm w-[20%] text-left">{index + 1}</td>
+                                    <td className="py-3 px-3 w-[20%] text-center ">
                                         <img className="w-8 h-8 rounded-full object-cover" src={rating.picture} referrerPolicy="no-referrer" alt={rating.name}/>
                                     </td>
-                                    <td className="py-3 text-left px-3 text-sm truncate overflow-hidden whitespace-nowrap">
+                                    <td className="py-3 text-left w-[40%] px-3 text-sm truncate overflow-hidden whitespace-nowrap">
                                         {rating.name.trim().split(/\s+/)[0]}
                                     </td>
-                                    <td className="py-3 px-3 text-sm truncate text-center overflow-hidden whitespace-nowrap">
+                                    <td className="py-3 px-3 w-[20%] text-sm truncate text-center overflow-hidden whitespace-nowrap">
                                         {rating.score}
                                     </td>
                                 </tr>
