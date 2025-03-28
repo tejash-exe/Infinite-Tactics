@@ -27,6 +27,7 @@ const generateAccessToken = async (userid) => {
 const googleLogin = async (req, res) => {
     try {
         const { code } = req.query;
+        console.log(code);
         const googleRes = await oauth2client.getToken(code);
         oauth2client.setCredentials(googleRes.tokens);
 
