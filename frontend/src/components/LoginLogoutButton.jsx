@@ -34,7 +34,7 @@ const LoginLogoutButton = () => {
                     setisAuth(true);
                 }
                 else {
-                    console.log(result);
+                    // console.log(result);
                     throw new Error(result.message);
                 }
             }
@@ -50,6 +50,7 @@ const LoginLogoutButton = () => {
         onError: responseGoogle,
         flow: 'auth-code',
         ux_mode: "popup",
+        prompt: "select_account",
     });
 
     const handleLogout = async (e) => {

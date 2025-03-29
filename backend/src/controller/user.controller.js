@@ -27,14 +27,14 @@ const generateAccessToken = async (userid) => {
 const googleLogin = async (req, res) => {
     try {
         const { code } = req.query;
-        console.log(code);
+        // console.log(code);
         const googleRes = await oauth2client.getToken(code);
         oauth2client.setCredentials(googleRes.tokens);
 
         const userRes = await fetch(`https://www.googleapis.com/oauth2/v1/userinfo?alt=json&access_token=${googleRes.tokens.access_token}`, { method: 'GET' });
 
         const response = await userRes.json();
-        console.log(response);
+        // console.log(response);
 
         const { name, email, picture } = response;
 
@@ -60,7 +60,7 @@ const googleLogin = async (req, res) => {
         const loggedInUser = await User.findById(user._id).select(" -accessToken ").lean();
         if (!loggedInUser) throw new Error("Cannot find user!!");
 
-        console.log(loggedInUser.name + " logged in!");
+        // console.log(loggedInUser.name + " logged in!");
         res.setHeader("Cross-Origin-Opener-Policy", "same-origin-allow-popups");
         res.setHeader("Cross-Origin-Embedder-Policy", "require-corp");
 
