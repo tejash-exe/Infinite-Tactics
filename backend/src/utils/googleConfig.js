@@ -8,7 +8,7 @@ const redirectUri = process.env.GOOGLE_REDIRECT_URI;
 const oauth2client = new google.auth.OAuth2(
     clientId,
     clientSecret,
-    redirectUri,
+    "postmessage",
 );
 
 export default oauth2client;
