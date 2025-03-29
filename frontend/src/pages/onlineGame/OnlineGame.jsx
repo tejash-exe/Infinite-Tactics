@@ -278,7 +278,7 @@ const OnlineGame = () => {
           </div>
         </div>
         <div>
-          <div className={'flex w-[5rem] p-3 rounded-xl ' + ((timer != null && timer <= 3) ? ' animate-pulse bg-red-400 text-white ' : ' bg-purple-200 ')}>
+          <div className={'flex w-[7rem] p-3 rounded-xl ' + ((timer != null && timer <= 3) ? ' animate-pulse bg-red-400 text-white ' : ' bg-purple-200 ')}>
             <div><img className='object-contain w-6 h-6' src="./hourglass.png" /></div>
             <div>: {(timer != null) ? timer + 's' : <FontAwesomeIcon icon={faInfinity} />}</div>
           </div>
