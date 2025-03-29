@@ -111,8 +111,10 @@ const fetchLeaderboard = async (req, res) => {
     try {
         const users = await User.find({})
         .select(' -accessToken ')
-        .sort({ score: -1, createdAt: 1 }) 
+        .sort({ createdAt: 1 }) 
         .exec();
+
+        users.sort((a, b) => Number(b.score) - Number(a.score));
         
         res.json(new ApiResponse(200, "Leaderboard fetched successfully!", users));
     } catch (error) {
