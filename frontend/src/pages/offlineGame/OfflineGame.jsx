@@ -203,9 +203,9 @@ const OfflineGame = () => {
         </div>
       </div>
       <div>
-        <div className={'flex w-[7rem] p-3 rounded-xl justify-center ' + ((timer != null && timer <= 3) ? ' animate-pulse bg-red-400 text-white ' : ' bg-purple-200 ')}>
+        <div className={'flex w-[6rem] p-3 rounded-xl justify-center ' + ((timer != null && timer <= 3) ? ' animate-pulse bg-red-400 text-white ' : ' bg-purple-200 ')}>
           <div><img className='object-contain w-6 h-6' src="./hourglass.png" /></div>
-          <div>: {(timer != null) ? timer + 's' : <FontAwesomeIcon icon={faInfinity} />}</div>
+          <div className='w-[2rem]'>: {(timer != null) ? timer + 's' : <FontAwesomeIcon icon={faInfinity} />}</div>
         </div>
       </div>
       <div className="flex flex-wrap w-56 h-56 rounded-lg ">
