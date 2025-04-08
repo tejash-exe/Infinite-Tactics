@@ -99,7 +99,7 @@ const OfflineGame = () => {
     for (let line of lines) {
       const [a, b, c, d] = line;
       if (board[a] && board[a] === board[b] && board[a] === board[c] && board[a] === board[d]) {
-        return { winner: board[a], winningCells: line };
+        return line;
       }
     }
     return null;
