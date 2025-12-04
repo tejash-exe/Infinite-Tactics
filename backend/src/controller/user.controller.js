@@ -61,8 +61,8 @@ const googleLogin = async (req, res) => {
         if (!loggedInUser) throw new Error("Cannot find user!!");
 
         // console.log(loggedInUser.name + " logged in!");
-        res.setHeader("Cross-Origin-Opener-Policy", "same-origin-allow-popups");
-        res.setHeader("Cross-Origin-Embedder-Policy", "require-corp");
+        // res.setHeader("Cross-Origin-Opener-Policy", "same-origin-allow-popups");
+        // res.setHeader("Cross-Origin-Embedder-Policy", "require-corp");
 
         res
             .cookie("accessToken", accessToken, options)
